@@ -17,18 +17,16 @@ def home(request):
 
 def login(request):
     global auth_success 
-    global user
     flag=1
     if auth_success == 1:
         return redirect('home')
     if request.method == 'POST':
         
-        data = personalInfos.objects.all()
+        data = personalInfo.objects.all()
         element = request.POST.get('u_id') 
         password1 = request.POST.get('pass')
         if(element == LinearSearch(data, element, password1)):
             auth_success = 1
-            user = element
             return redirect('home')
         else:
             flag = 0
@@ -94,7 +92,9 @@ def logout(request):
     return render(request, 'logout.html')
 
 def LinearSearch(lys, element, pwd):
+    global user
     for i in range (len(lys)):
-        if lys[i].u_id == element and lys[i].password == pwd:
+        if lys[i].email == element and lys[i].password == pwd:
+            user = lys[i].first_name +" "+ lys[i].middle_name +" "+ lys[i].last_name
             return element
     return -1

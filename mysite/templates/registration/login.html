@@ -6,11 +6,12 @@
     <form method="post">
     {% csrf_token %}
     {% if flag == 0 %}
-        <p>Incorrect user id and password</p>
+       <!--<p style="color:#de0000">Incorrect email id and password!</p>-->
+       <script>alert("Incorrect email id and password!");</script>
     {% endif %}
 
-    <label for="u_id">User Id :</label>
-    <input type="text" id="u_id" name="u_id" placeholder="User ID"><br><br>
+    <label for="u_id">Email Id :</label>
+    <input type="text" id="u_id" name="u_id" placeholder="Email ID"><br><br>
 
     <label for="pass">Password :</label>
     <input type="Password" id="pass" name="pass" placeholder="Password"><br><br>
@@ -19,5 +20,5 @@
     </form>
     <p>OR</p>
     <button onclick="window.location.href='/signup'">Sign up</button>
-
+    
 {%endblock%}

@@ -5,10 +5,10 @@
     <h2>Homepage</h2>
     
     {% if auth_success == 0 %}
-        <p>Welcome</p>
+        
         <button onclick="window.location.href='login/'">Log in</a>
     {% else %}
-        <p>Welcome {{user}}</p>
+        <p>Welcome {{user}}!</p>
         <button onclick="window.location.href='logout/'">Logout</a>
     {% endif %}
     
