@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+    <h2>Sign Up</h2>
+    <form method="post">
+    {% csrf_token %}
+    {% if flag == 0 %}
+        <p>Incorrect user id and password</p>
+    {% endif %}
+
+    <label for="u_id">User Id :</label>
+    <input type="text" id="u_id" name="u_id" placeholder="User ID"><br><br>
+
+    <label for="pass">Password :</label>
+    <input type="Password" id="pass" name="pass" placeholder="Password"><br><br>
+    <button type='submit'>Log in</button>
+
+    </form>
+    <p>OR</p>
+    <button onclick="window.location.href='/signup'">Sign up</button>
+
+{%endblock%}

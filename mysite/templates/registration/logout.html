@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+    
+    <form method="post">
+    {% csrf_token %}
+    <p>Do you really want to log out?</p>
+    <button type='submit'>Logout</button>
+
+    </form>
+    <p>OR</p>
+    <button onclick="window.location.href='/'">Goback</a>
+
+{%endblock%}

@@ -1,0 +1,247 @@
+
+{%extends 'base.html'%}
+
+
+{%block title%}EGlobalDoctors{%endblock%}
+{%block head1 %}
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<style>
+.button {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.canc{
+    background-color: #1a1aff;
+}
+body {
+  color: #000000;
+}
+
+h1 {
+  color: #000000;
+}
+</style>
+{% endblock %}
+
+{%block content%}
+<h1>Register a Doctor</h1>
+
+<form  method="post" >
+{% csrf_token %}
+<!personal info >
+<fieldset>
+	<legend>Personal Information</legend>
+	<table>
+	<tr>
+         <td><label for="Email">Email :</label></td> <td><input type="text" id="Email" name="Email"></td>     
+         <td><label for="Password">Password :</label></td> <td><input type="password" id="First Name" name="Password"></td>
+
+	 </tr>
+     
+	<tr>
+         <td><label for="First Name">First Name :</label></td> <td><input type="text" id="First Name" name="First Name"></td>
+     
+         <td><label for="Date of Birth">Date of Birth </label></td> <td><input type="Date" id="Date of Birth" name="Date of Birth"> <i class='fas fa-calendar-alt' style='font-size:24px'></i></td>
+	 
+	 </tr>
+
+		<tr>
+         <td><label for="Middle Name">Middle Name :</label></td> <td><input type="text" id="Middle Name" name="Middle Name"></td>
+     </tr>
+     <tr>
+         <td><label for="Last Name">Last Name :</label></td> <td><input type="text" id="Last Name" name="Last Name"></td>
+     </tr>
+	<tr>
+		<td><label for="Gender"> Gender :</label></td> <td> <input type="radio" name="gender" id="Male" value="male"> Male <input type="radio" name="gender" id="Female" value="male"> Female <input type="radio" name="gender" id="Other" value="male"> Other</td>
+	</tr>
+	
+</table>
+
+</fieldset>
+
+
+
+
+<!Address>
+
+<fieldset>
+<legend>Address</legend>
+	<table>
+	<tr>
+		<td><label for="Country" required> Country :</label></td> <td> <input type="text" id="Country" name="country"></td> 
+		<td><label for="State" required> State : </label></td> <td> <input type="text" id="State" name="state"></td>
+	</tr>
+
+	<tr>
+		<td><label for="City"> City :</label></td> <td> <input type="text" id="City" name="city"></td> 
+		<td><label for="Address line 1" required> Address line 1 :</label></td> <td> <input type="text" id="address1" name="addressline1"></td>
+	</tr>
+
+	<tr>
+		<td><label for="Address Line 2"> Address Line 2 :</label></td> <td> <input type="text" id="address2" name="addressline2"></td> 
+		<td><label for="Zip/ Pin Code"> Zip/ Pin Code:</label></td> <td> <input type="text" id="Zip/ Pin Code" name="pin code"></td>
+	</tr>
+
+	<tr>
+		<td><label for="Primary Contact"> Primary Contact : </label></td>
+		<td> <select id="Primary Contact" name="country codePC">
+			<option value="+1">+1</option>
+			<option value="+91">+91</option>
+			<option value="+44">+44</option>
+			<option value="+971">+971</option>
+			<option value="+243">+243</option>
+		</select> <input type="text" id="Primary Contact" name="primaryContact"></td> 
+		
+	</tr>
+
+	<tr>
+		<td><label for="Secondary Contact"> Secondary Contact : </label></td> 
+		<td> 
+		<select id="Secondary Contact" name="country codeSC">
+			<option value="+1">+1</option>
+			<option value="+91">+91</option>
+			<option value="+44">+44</option>
+			<option value="+971">+971</option>
+			<option value="+243">+243</option>
+		</select> <input type="text" id="Secondary Contact" name="secondaryContact"></td> 
+		
+	</tr>
+
+</table>
+</fieldset>
+
+
+
+	 
+<!Profile>
+<fieldset>
+<legend>Profile</legend>
+<table>
+	<tr>
+		<td><label for="Primary Speciality">Primary Speciality </label></td> 
+		<td> <select id="Primary Speciality" name="Primary Speciality"> 
+			<option>Cardiologists</option>
+			<option>Dermatologists</option>
+			<option>Deental</option>
+			<option>Endocrinologists</option>
+			<option>Gastroenterologists</option>
+			<option>Hematologists</option>
+			<option>Neurologists</option>
+		</select></td>
+		<td><label for="Experience in Years">Experience in Years </label></td> <td><input type="text" id="Experience in Years" name="Experience in Years"></td>
+	</tr>
+
+	<tr>
+		<td><label for="Secondary Speciality">Secondary Speciality </label></td> <td> <select id="Secondary Speciality" name="Secondary Speciality"> 
+			<option>Cardiologists</option>
+			<option>Dermatologists</option>
+			<option>Deental</option>
+			<option>Endocrinologists</option>
+			<option>Gastroenterologists</option>
+			<option>Hematologists</option>
+			<option>Neurologists</option>
+		</select></td>
+		<td><label for="NPI/GMC/IMC number">NPI/GMC/IMC number </label></td> <td><input type="text" id="NPI/GMC/IMC number" name="NPI/GMC/IMC number"></td>
+
+	</tr>
+
+</table>
+
+
+
+
+
+		
+		<label>Profile Photo</label>
+ 		 <input type="file" id="myFile" name="ProfilePhoto">
+ 		 
+		
+
+
+<table>
+	<tr>
+		<td><label for="Medical School"> Medical School : </label></td> <td> <input type="text" id="Medical School" name="Medical School"></td>
+		<td><label for="Residency/Specialist Training/ PG"> Residency/Specialist Training/ PG:</label></td> <td> <input type="text" id="Residency/Specialist Training/ PG" name="Residency/Specialist Training/ PG"></td>
+	</tr>
+
+	<tr>
+		<td><label for="Fellowship"> Fellowship :</label></td> <td> <input type="text" id="Fellowship" name="Fellowship"></td>
+		<td><label for="Board Certificatiom"> Board Certificatiom :</label></td> <td> <input type="text" id="Board Certificatiom" name="Board Certificatiom"></td>
+	</tr>
+
+	<tr>
+		<td><label for="States to Practice"> States to Practice :</label></td> <td> <input type="text" id="States to Practice" name="States to Practice"></td>
+		
+		<td><label for="Revalidation/ Continuing medical education Year"> Revalidation/ Continuing medical education Year :</label></td> <td> <input type="text" id="Revalidation/ Continuing medical education Year" name="Revalidation/ Continuing medical education Year"></td>
+	</tr>
+
+	<tr>
+		<td><label for=" Honors/Awards/ Recognition"> Honors/Awards/ Recognition :</label></td> <td> <input type="text" id=" Honors/Awards/ Recognition" name="Honors/Awards/ Recognition"></td>
+		<td> <label for="Publications">Publications </label> </td> <td> <input type="text" id="Publications" name="Publications"></td>
+	</tr>
+	<tr>
+		<td><label for="Hospital Privileges to practice"> Hospital Privileges to practice </label> </td> <td> <input type="text" id="Hospital Privileges to practice" name="Hospital Privileges to practice"></td>			
+	</tr>
+</table>
+	
+		
+		<label for="Resume/CV">Resume/CV</label>
+ 		 <input type="file" id="Resume/CV" name="Resume/CV">
+ 		 
+		
+
+
+<table>
+	<tr>
+		<td><label for="Description about yourself"> Description about yourself </label></td> <td><textarea cols="40" rows="4" placeholder="max 100 words" value="" id="Description about yourself" name="Description about yourself" required></textarea></td>
+		<td><label for="Additional Comments"> Additional Comments </label> </td> <td><textarea cols="40" rows="4" placeholder="max 100 words" value="" id="Additional Comments" name="Additional Comments" required></textarea></td>
+	</tr>
+</table>
+</fieldset>
+
+
+
+
+
+
+<div>
+<center>
+	<input id="agreed" type="checkbox" onclick="if(this.checked){check()}else{uncheck()}" name="agreed">
+	<label for="agreed"> I agree to the terms and conditions and Privacy Policy 
+</center>
+	</label>
+	
+</div>
+<div>
+<center>
+	<button id="registerBtn" type="submit" class="button" disabled="disable">Register</button>
+	<a href="#" class="button canc">Cancel</a>
+</center>
+	
+</div>
+
+
+
+
+</form>
+
+<script>
+
+function check() {
+    document.getElementById("registerBtn").disabled = false;
+    document. getElementById('registerBtn'). style. backgroundColor = '#1a1aff';
+}
+function uncheck(){
+    document.getElementById("registerBtn").disabled = true;
+    document. getElementById('registerBtn'). style. backgroundColor = 'grey';
+}
+</script>
+{%endblock%}
