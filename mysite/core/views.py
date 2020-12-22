@@ -23,7 +23,7 @@ def login(request):
         return redirect('home')
     if request.method == 'POST':
         
-        data = personalInfo.objects.all()
+        data = personalInfos.objects.all()
         element = request.POST.get('u_id') 
         password1 = request.POST.get('pass')
         if(element == LinearSearch(data, element, password1)):
@@ -48,6 +48,7 @@ def signup(request):
         reg.email = request.POST.get('Email')
         reg.date_of_birth = d
         reg.gender = request.POST.get('gender')
+        reg.password = request.POST.get('Password')
 
         reg.country = request.POST.get('country')
         reg.state = request.POST.get('state')

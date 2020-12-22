@@ -11,6 +11,7 @@ class personalInfo(models.Model):
     email = models.CharField(default="",max_length=50)
     date_of_birth = models.DateField()
     gender = models.CharField(default="NA",max_length=10)
+    password = models.CharField(default="",max_length=30)
 
     country = models.CharField(default="",max_length=30)
     state = models.CharField(default="",max_length=30)
