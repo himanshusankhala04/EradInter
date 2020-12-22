@@ -2,7 +2,7 @@
 {%extends 'base.html'%}
 
 
-{%block title%}EGlobalDoctors{%endblock%}
+{%block title%}Register{%endblock%}
 {%block head1 %}
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<style>
@@ -10,7 +10,7 @@
   background-color: grey;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -25,14 +25,14 @@ body {
   color: #000000;
 }
 
-h1 {
-  color: #000000;
+h2 {
+  color: #4a4848;
 }
 </style>
 {% endblock %}
 
 {%block content%}
-<h1>Register a Doctor</h1>
+<h2>Register a Doctor</h2>
 
 <form  method="post" >
 {% csrf_token %}
@@ -41,26 +41,26 @@ h1 {
 	<legend>Personal Information</legend>
 	<table>
 	<tr>
-         <td><label for="Email">Email :</label></td> <td><input type="text" id="Email" name="Email"></td>     
-         <td><label for="Password">Password :</label></td> <td><input type="password" id="pass" name="Password"></td>
+         <td><label for="Email">Email :</label></td> <td><input type="text" id="Email" name="Email" required></td>     
+         <td><label for="Password">Password :</label></td> <td><input type="password" id="pass" name="Password" required></td>
 
 	 </tr>
      
 	<tr>
-         <td><label for="First Name">First Name :</label></td> <td><input type="text" id="First Name" name="First Name"></td>
+         <td><label for="First Name">First Name :</label></td> <td><input type="text" id="First Name" name="First Name" required></td>
      
-         <td><label for="Date of Birth">Date of Birth </label></td> <td><input type="Date" id="Date of Birth" name="Date of Birth"> <i class='fas fa-calendar-alt' style='font-size:24px'></i></td>
+         <td><label for="Date of Birth">Date of Birth </label></td> <td><input type="Date" id="Date of Birth" name="Date of Birth" required> <i class='fas fa-calendar-alt' style='font-size:24px'></i></td>
 	 
 	 </tr>
 
 		<tr>
-         <td><label for="Middle Name">Middle Name :</label></td> <td><input type="text" id="Middle Name" name="Middle Name"></td>
+         <td><label for="Middle Name">Middle Name :</label></td> <td><input type="text" id="Middle Name" name="Middle Name" required></td>
      </tr>
      <tr>
-         <td><label for="Last Name">Last Name :</label></td> <td><input type="text" id="Last Name" name="Last Name"></td>
+         <td><label for="Last Name">Last Name :</label></td> <td><input type="text" id="Last Name" name="Last Name" required></td>
      </tr>
 	<tr>
-		<td><label for="Gender"> Gender :</label></td> <td> <input type="radio" name="gender" id="Male" value="male"> Male <input type="radio" name="gender" id="Female" value="male"> Female <input type="radio" name="gender" id="Other" value="male"> Other</td>
+		<td><label for="Gender"> Gender :</label></td> <td> <input type="radio" name="gender" id="Male" value="male"> Male <input type="radio" name="gender" id="Female" value="male"> Female <input type="radio" name="gender" id="Other" value="male" required> Other</td>
 	</tr>
 	
 </table>
@@ -76,8 +76,8 @@ h1 {
 <legend>Address</legend>
 	<table>
 	<tr>
-		<td><label for="Country" required> Country :</label></td> <td> <input type="text" id="Country" name="country"></td> 
-		<td><label for="State" required> State : </label></td> <td> <input type="text" id="State" name="state"></td>
+		<td><label for="Country"> Country :</label></td> <td> <input type="text" id="Country" name="country" required></td> 
+		<td><label for="State"> State : </label></td> <td> <input type="text" id="State" name="state" required></td>
 	</tr>
 
 	<tr>
@@ -178,17 +178,17 @@ h1 {
 	</tr>
 
 	<tr>
-		<td><label for="States to Practice"> States to Practice :</label></td> <td> <input type="text" id="States to Practice" name="States to Practice"></td>
+		<td><label for="States to Practice"> States to Practice :</label></td> <td> <input type="text" id="States to Practice" name="States to Practice" required></td>
 		
-		<td><label for="Revalidation/ Continuing medical education Year"> Revalidation/ Continuing medical education Year :</label></td> <td> <input type="text" id="Revalidation/ Continuing medical education Year" name="Revalidation/ Continuing medical education Year"></td>
+		<td><label for="Revalidation/ Continuing medical education Year"> Revalidation/ Continuing medical education Year :</label></td> <td> <input type="text" id="Revalidation/ Continuing medical education Year" name="Revalidation/ Continuing medical education Year" required></td>
 	</tr>
 
 	<tr>
-		<td><label for=" Honors/Awards/ Recognition"> Honors/Awards/ Recognition :</label></td> <td> <input type="text" id=" Honors/Awards/ Recognition" name="Honors/Awards/ Recognition"></td>
+		<td><label for=" Honors/Awards/ Recognition"> Honors/Awards/ Recognition :</label></td> <td> <input type="text" id=" Honors/Awards/ Recognition" name="Honors/Awards/ Recognition" required></td>
 		<td> <label for="Publications">Publications </label> </td> <td> <input type="text" id="Publications" name="Publications"></td>
 	</tr>
 	<tr>
-		<td><label for="Hospital Privileges to practice"> Hospital Privileges to practice </label> </td> <td> <input type="text" id="Hospital Privileges to practice" name="Hospital Privileges to practice"></td>			
+		<td><label for="Hospital Privileges to practice"> Hospital Privileges to practice </label> </td> <td> <input type="text" id="Hospital Privileges to practice" name="Hospital Privileges to practice" required></td>			
 	</tr>
 </table>
 	

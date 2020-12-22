@@ -1,15 +1,32 @@
 {%extends 'base.html'%}
 
+{%block title%}Logout{%endblock%}
+{%block head1%}
+<style>
+.button {
+  background-color: #1a1aff;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+</style>
+{%endblock%}
 {%block content%}
 
     
     <form method="post">
     {% csrf_token %}
     <p>Do you really want to log out?</p>
-    <button type='submit'>Logout</button>
+    <button class="button"  type='submit'>Logout</button>
 
     </form>
     <p>OR</p>
-    <button onclick="window.location.href='/'">Goback</a>
+    <button class="button" onclick="window.location.href='/'">Goback</button>
 
 {%endblock%}
